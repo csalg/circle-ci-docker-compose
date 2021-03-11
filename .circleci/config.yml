@@ -18,8 +18,8 @@ jobs:
       - setup_remote_docker
       - run:
           name: Print out some useful info
-          command: echo *; pwd
+          command: ls; pwd
 
       - run:
           name: Start container and verify it is working
-          command: docker-compose up
+          command: pwd; docker-compose up
