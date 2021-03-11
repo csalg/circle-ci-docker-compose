@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # Specify the version you desire here
-      - image: circleci/builpack-deps:buster
+      - image: circleci/buildpack-deps:buster
     steps:
       - checkout
       
