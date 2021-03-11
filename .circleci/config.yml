@@ -22,4 +22,7 @@ jobs:
 
       - run:
           name: Start container and verify it is working
-          command: pwd; docker-compose up
+          command: |
+            set -x
+            pwd
+            docker-compose up
