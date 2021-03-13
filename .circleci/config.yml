@@ -7,8 +7,10 @@ jobs:
   build:
     docker:
       # Specify the version you desire here
-      - image: circleci/php:7.1-node-browsers
+      - image: circleci/buildpack-deps:buster
     steps:
+      - checkout
+      
       - run:
           name: Install Docker Compose
           command: |
@@ -17,5 +19,12 @@ jobs:
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - setup_remote_docker
       - run:
+          name: Print out some useful info
+          command: ls; pwd
+
+      - run:
           name: Start container and verify it is working
-          command: docker-compose up
+          command: |
+            set -x
+            pwd
+            docker-compose up
